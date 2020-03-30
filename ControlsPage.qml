@@ -4,9 +4,12 @@ import QtQuick.Layouts 1.0
 
 Item {
     id: element
+    width: 720
+    height: 1280
     Rectangle
     {
         id: background
+        color: "#1c1d1f"
 //        color: "#1c1d1f"
         anchors.fill: parent
     }

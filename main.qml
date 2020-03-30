@@ -7,11 +7,11 @@ import QtQuick.Layouts 1.0
 ApplicationWindow {
     id: window
     visible: true
-    width: 360
-    height: 640
+    width: 720
+    height: 1280
     color: "#1c1d1f"
     title: qsTr("LED Controller")
-    visibility: "FullScreen"
+//    visibility: "FullScreen"
     Client
     {
         id: client

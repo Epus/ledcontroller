@@ -3,7 +3,8 @@ import QtQuick.Controls 2.13
 
 Item {
     id: element
-
+    width: 720
+    height: 1280
     function displayerror(msg)
     {
         errornotification.text = msg
@@ -99,15 +100,17 @@ Item {
     TextField {
         id: ipField
         font.pointSize: 15
-        anchors.verticalCenter: ipLabel.verticalCenter
         placeholderText: "IP Address"
+        color: "#ffffff"
+        anchors.right: portLabel.left
+        anchors.rightMargin: 10
+        anchors.verticalCenter: ipLabel.verticalCenter
         anchors.left: ipLabel.right
         anchors.leftMargin: 10
-        color: "#ffffff"
         background: Rectangle
         {
-            implicitWidth: 200
-            implicitHeight: 40
+            height: parent.height
+            width: parent.width
             color: "#2b2b2b"
         }
     }
@@ -115,17 +118,16 @@ Item {
     TextField {
         id: portField
         width: 50
-        anchors.top: parent.top
-        anchors.topMargin: 200
         font.pointSize: 15
         anchors.right: parent.right
         anchors.rightMargin: 25
         placeholderText: "#"
         color: "#ffffff"
+        anchors.verticalCenter: portLabel.verticalCenter
         background: Rectangle
         {
-            implicitWidth: 200
-            implicitHeight: 40
+            width: parent.width
+            height: parent.height
             color: "#2b2b2b"
         }
     }
@@ -133,9 +135,9 @@ Item {
     CustomButton {
         id: connectButton
         text: qsTr("Connect")
+        anchors.top: parent.top
+        anchors.topMargin: 300
         custombg.color: "#2c7ef9"
-        anchors.top: portField.bottom
-        anchors.topMargin: 20
         anchors.left: parent.left
         anchors.leftMargin: 25
         anchors.right: parent.right
@@ -151,11 +153,10 @@ Item {
 
     Label {
         id: ipLabel
-        x: 25
         color: "#fefdfd"
         text: qsTr("IP:")
-        anchors.top: parent.top
-        anchors.topMargin: 200
+        anchors.bottom: connectButton.top
+        anchors.bottomMargin: 25
         anchors.left: parent.left
         anchors.leftMargin: 25
         font.pointSize: 20
@@ -180,7 +181,8 @@ Item {
         y: 194
         color: "#fefdfd"
         text: qsTr("PORT:")
-        anchors.verticalCenter: portField.verticalCenter
+        anchors.bottom: connectButton.top
+        anchors.bottomMargin: 25
         anchors.right: portField.left
         anchors.rightMargin: 10
         font.pointSize: 20
@@ -190,6 +192,6 @@ Item {
 
 /*##^##
 Designer {
-    D{i:5;anchors_width:50}D{i:12;anchors_width:50}D{i:18;anchors_y:330}
+    D{i:5;anchors_width:50}D{i:12;anchors_width:200}D{i:18;anchors_y:330}
 }
 ##^##*/
